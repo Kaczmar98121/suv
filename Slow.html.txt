@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сайт для супервайзеров</title>
+  <style>
+    /* Сброс стандартных стилей */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    nav {
+      background-color: #0066cc;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    form input[type="text"],
+    form input[type="date"],
+    form input[type="file"],
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    form button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 15px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    form button:hover {
+      background-color: #003060;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #004080;
+      color: white;
+    }
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1>Сайт для супервайзеров</h1>
+  </header>
+  
+  <nav class="container">
+    <a href="#handover">Передача смены</a>
+    <a href="#tickets">Заявки</a>
+    <a href="#blockers">Блокеры</a>
+    <a href="#feedbacks">Обратная связь</a>
+    <a href="#5s">Информация по 5S</a>
+    <a href="#processes">Диаграмма процессов</a>
+    <a href="#firstline">Первая линия поддержки</a>
+    <a href="#requests">Запросы смене</a>
+    <a href="#projects">Проекты</a>
+  </nav>
+  
+  <main class="container">
+    <!-- 1. Передача смены (Handover) -->
+    <section id="handover">
+      <h2>Передача смены (Handover)</h2>
+      <p>Заполните форму для передачи смены:</p>
+      <form action="#" method="POST">
+        <label for="handover-date">Дата:</label>
+        <input type="date" id="handover-date" name="handover-date">
+        
+        <label for="handover-supervisor">Сменщик:</label>
+        <input type="text" id="handover-supervisor" name="handover-supervisor" placeholder="Имя сменщика">
+        
+        <label for="handover-status">Статус задач:</label>
+        <textarea id="handover-status" name="handover-status" rows="4" placeholder="Описание текущих задач"></textarea>
+        
+        <label for="handover-issues">Открытые заявки и риски:</label>
+        <textarea id="handover-issues" name="handover-issues" rows="4" placeholder="Перечислите открытые заявки и риски"></textarea>
+        
+        <button type="submit">Отправить передачу смены</button>
+      </form>
+    </section>
+    
+    <!-- 2. Заявки (Tickets) -->
+    <section id="tickets">
+      <h2>Заявки (Tickets)</h2>
+      <p>Оставьте заявку или отметьте статус заявки:</p>
+      <form action="#" method="POST">
+        <label for="ticket-title">Название заявки:</label>
+        <input type="text" id="ticket-title" name="ticket-title" placeholder="Название заявки">
+        
+        <label for="ticket-status">Статус заявки:</label>
+        <select id="ticket-status" name="ticket-status">
+          <option value="open">Открыта</option>
+          <option value="in-progress">В работе</option>
+          <option value="done">Завершена</option>
+          <option value="escalated">Эскалация</option>
+        </select>
+        
+        <label for="ticket-description">Описание:</label>
+        <textarea id="ticket-description" name="ticket-description" rows="4" placeholder="Описание заявки"></textarea>
+        
+        <button type="submit">Отправить заявку</button>
+      </form>
+    </section>
+    
+    <!-- 3. Блокеры (Blockers) -->
+    <section id="blockers">
+      <h2>Блокеры (Blockers)</h2>
+      <p>Регистрация проблем и блокеров:</p>
+      <form action="#" method="POST">
+        <label for="blocker-description">Описание блокера:</label>
+        <textarea id="blocker-description" name="blocker-description" rows="4" placeholder="Опишите проблему"></textarea>
+        
+        <label for="blocker-responsible">Ответственный:</label>
+        <input type="text" id="blocker-responsible" name="blocker-responsible" placeholder="Имя ответственного">
+        
+        <label for="blocker-solution">Предложенное решение:</label>
+        <textarea id="blocker-solution" name="blocker-solution" rows="3" placeholder="Предложите решение"></textarea>
+        
+        <button type="submit">Зарегистрировать блокер</button>
+      </form>
+    </section>
+    
+    <!-- 4. Обратная связь (Feedbacks) -->
+    <section id="feedbacks">
+      <h2>Обратная связь (Feedbacks)</h2>
+      <p>Оставьте отзыв:</p>
+      <form action="#" method="POST">
+        <label for="feedback-name">Ваше имя:</label>
+        <input type="text" id="feedback-name" name="feedback-name" placeholder="Имя">
+        
+        <label for="feedback-message">Ваш отзыв:</label>
+        <textarea id="feedback-message" name="feedback-message" rows="4" placeholder="Ваш отзыв"></textarea>
+        
+        <label for="feedback-escalation">Требует эскалации?</label>
+        <select id="feedback-escalation" name="feedback-escalation">
+          <option value="no">Нет</option>
+          <option value="yes">Да</option>
+        </select>
+        
+        <button type="submit">Отправить отзыв</button>
+      </form>
+    </section>
+    
+    <!-- 5. Информация по 5S -->
+    <section id="5s">
+      <h2>Информация по 5S</h2>
+      <p>Описание методологии 5S:</p>
+      <ul>
+        <li>Seiri – Убрать лишнее</li>
+        <li>Seiton – Организовать</li>
+        <li>Seiso – Содержание в чистоте</li>
+        <li>Seiketsu – Стандартизация</li>
+        <li>Shitsuke – Поддержание дисциплины</li>
+      </ul>
+      <p>Добавьте чек-листы для контроля выполнения стандартов 5S.</p>
+    </section>
+    
+    <!-- 6. Диаграмма процессов (All ST on the Flow) -->
+    <section id="processes">
+      <h2>Диаграмма процессов (All ST on the Flow)</h2>
+      <p>Визуализация стандартных процессов:</p>
+      <!-- Здесь можно вставить изображение схемы -->
+      <img src="https://via.placeholder.com/800x400?text=Диаграмма+процессов" alt="Диаграмма процессов" style="max-width:100%;">
+      <p>Подробное описание этапов процесса.</p>
+    </section>
+    
+    <!-- 7. Первая линия поддержки (First Line) -->
+    <section id="firstline">
+      <h2>Первая линия поддержки (First Line)</h2>
+      <p>Регистрация инцидентов:</p>
+      <form action="#" method="POST">
+        <label for="incident-description">Описание инцидента:</label>
+        <textarea id="incident-description" name="incident-description" rows="4" placeholder="Опишите инцидент"></textarea>
+        
+        <label for="incident-escalation">Нужна эскалация?</label>
+        <select id="incident-escalation" name="incident-escalation">
+          <option value="no">Нет</option>
+          <option value="yes">Да</option>
+        </select>
+        
+        <button type="submit">Зарегистрировать инцидент</button>
+      </form>
+    </section>
+    
+    <!-- 8. Запросы для другой смены (Request List for Other Shift) -->
+    <section id="requests">
+      <h2>Запросы для другой смены</h2>
+      <p>Оставьте запрос с описанием и, при необходимости, прикрепите фото:</p>
+      <form action="#" method="POST" enctype="multipart/form-data">
+        <label for="request-description">Описание запроса:</label>
+        <textarea id="request-description" name="request-description" rows="4" placeholder="Опишите запрос"></textarea>
+        
+        <label for="request-photo">Прикрепить фото:</label>
+        <input type="file" id="request-photo" name="request-photo">
+        
+        <button type="submit">Отправить запрос</button>
+      </form>
+    </section>
+    
+    <!-- 9. Проекты (Project List) -->
+    <section id="projects">
+      <h2>Список проектов (Project List)</h2>
+      <p>Текущие и завершённые проекты:</p>
+      <table>
+        <tr>
+          <th>Название</th>
+          <th>Описание</th>
+          <th>Статус</th>
+        </tr>
+        <tr>
+          <td>Проект 1</td>
+          <td>Описание проекта 1</td>
+          <td>Активен</td>
+        </tr>
+        <tr>
+          <td>Проект 2</td>
+          <td>Описание проекта 2</td>
+          <td>Завершён</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+  
+  <footer class="container">
+    <p>&copy; 2025 Сайт для супервайзеров</p>
+  </footer>
+</body>
+</html>
